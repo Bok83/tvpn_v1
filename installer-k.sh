@@ -6,7 +6,9 @@ netplan apply
 echo -e "[Network]\nAddress=fd34:7d71:4e57:ffff::1/64\nGateway=fd34:7d71:4e57:ffff::2/64" > /etc/systemd/network/tun0.network
 systemctl restart systemd-networkd
 # install need apps & new resolv.conf
-apt install curl socat resolvconf -y ;rm /etc/resolv.conf ;echo -e "nameserver 8.8.8.8\nnameserver 8.8.4.4" > /etc/resolv.conf
+apt install curl socat resolvconf -y
+rm /etc/resolv.conf
+echo -e "nameserver 8.8.8.8\nnameserver 8.8.4.4" > /etc/resolv.conf
 # install panel sanaei
 yes n | bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
 # replace backup x-ui

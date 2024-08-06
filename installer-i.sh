@@ -12,7 +12,7 @@ apt install curl socat resolvconf -y
 rm /etc/resolv.conf
 echo -e "nameserver 8.8.8.8\nnameserver 8.8.4.4" > /etc/resolv.conf
 # install panel sanaei
-yes n | bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
 # telegram
 echo "127.0.0.43 api.telegram.org" >> /etc/hosts
 # netspeed server

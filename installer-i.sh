@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# firewall
+ufw disable
 # give ip local
 echo -e "network:\n  version: 2\n  tunnels:\n    tunel01:\n      mode: sit\n      local: $1\n      remote: $2\n      addresses:\n        - fd34:7d71:4e57:ffff::2/64\n      mtu: 1500" > /etc/netplan/pdtun.yaml
 netplan apply
